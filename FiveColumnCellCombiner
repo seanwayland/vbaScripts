@@ -1,0 +1,43 @@
+Sub CellCombinerFiveCol()
+
+Dim ColOneEnd, ColTwoEnd, ColThreeEnd, ColFourEnd, ColFiveEnd, counter As Double
+Dim ColOneChoice, ColTwoChoice, ColThreeChoice, ColFourChoice, ColFiveChoice As String
+Dim OutString As String
+Dim a, b, c, d, e As Double
+counter = 1
+
+
+With ActiveSheet
+ColOneEnd = Cells(.Rows.Count, "A").End(xlUp).Row
+ColTwoEnd = Cells(.Rows.Count, "B").End(xlUp).Row
+ColThreeEnd = Cells(.Rows.Count, "C").End(xlUp).Row
+ColFourEnd = Cells(.Rows.Count, "D").End(xlUp).Row
+ColFiveEnd = Cells(.Rows.Count, "E").End(xlUp).Row
+End With
+
+
+For a = 1 To ColOneEnd
+    ColOneChoice = Cells(a, 1).Value
+    For b = 1 To ColTwoEnd
+    ColTwoChoice = Cells(b, 2).Value
+        For c = 1 To ColThreeEnd
+        ColThreeChoice = Cells(c, 3).Value
+            For d = 1 To ColFourEnd
+            ColFourChoice = Cells(d, 4).Value
+                For e = 1 To ColFiveEnd
+                ColFiveChoice = Cells(e, 5).Value
+                OutString = ColOneChoice & " " & ColTwoChoice & " " & ColThreeChoice & " " & ColFourChoice & " " & ColFiveChoice
+                Cells(counter, 7) = OutString
+                counter = counter + 1
+            
+                
+                Next e
+            Next d
+        Next c
+    Next b
+Next a
+                           
+
+
+
+End Sub
