@@ -36,7 +36,56 @@ For a = 1 To ColOneEnd
         Next c
     Next b
 Next a
-                           
+
+Dim i As Long, startRow As Long, endRow As Long
+Dim ws As Worksheet
+
+
+Application.Calculation = xlCalculationManual
+
+Set ws = ActiveSheet
+
+startRow = 1
+endRow = ws.Cells(ws.Rows.Count, 7).End(xlUp).Row
+
+
+For i = startRow To endRow
+    Randomize
+    ws.Cells(i, 8).Value = WorksheetFunction.RandBetween(1, 1000)
+Next i
+
+With ws.Sort
+     .SortFields.Add Key:=Range("H1"), Order:=xlAscending
+
+     .SetRange Range("G" & startRow & ":H" & endRow)
+     .Header = xlYes
+     .Apply
+End With
+
+For j = startRow To endRow
+
+     If (Cells(j, 8).Value Mod 6 = 0) Then
+        Cells(j, 7).Value = "#uh " & Cells(j, 7).Value
+     End If
+     
+          If (Cells(j, 8).Value Mod 7 = 0) Then
+        Cells(j, 7).Value = "#um " & Cells(j, 7).Value
+     End If
+     
+               If (Cells(j, 8).Value Mod 8 = 0) Then
+        Cells(j, 7).Value = "#ah " & Cells(j, 7).Value
+     End If
+     
+                    If (Cells(j, 8).Value Mod 9 = 0) Then
+        Cells(j, 7).Value = "#er " & Cells(j, 7).Value
+     End If
+        
+
+
+    
+
+Next j
+
 
 
 
