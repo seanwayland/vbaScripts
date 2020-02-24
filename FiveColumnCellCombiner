@@ -6,7 +6,7 @@ Dim OutString As String
 Dim a, b, c, d, e As Double
 counter = 1
 
-' get end of each columns
+
 With ActiveSheet
 ColOneEnd = Cells(.Rows.Count, "A").End(xlUp).Row
 ColTwoEnd = Cells(.Rows.Count, "B").End(xlUp).Row
@@ -15,7 +15,7 @@ ColFourEnd = Cells(.Rows.Count, "D").End(xlUp).Row
 ColFiveEnd = Cells(.Rows.Count, "E").End(xlUp).Row
 End With
 
-' loop over all the columns and permutate and combine and paste in column 7 
+
 For a = 1 To ColOneEnd
     ColOneChoice = Cells(a, 1).Value
     For b = 1 To ColTwoEnd
@@ -45,15 +45,13 @@ Application.Calculation = xlCalculationManual
 
 Set ws = ActiveSheet
 
-' get the number of rows of data created 
 startRow = 1
 endRow = ws.Cells(ws.Rows.Count, 7).End(xlUp).Row
 
-' sort the created data randomly 
 
 For i = startRow To endRow
     Randomize
-    ws.Cells(i, 8).Value = WorksheetFunction.RandBetween(1, 1000)
+    ws.Cells(i, 8).Value = WorksheetFunction.RandBetween(1, 100000)
 Next i
 
 With ws.Sort
@@ -64,23 +62,21 @@ With ws.Sort
      .Apply
 End With
 
-' add random utterances "uh" "um" etc 
-
 For j = startRow To endRow
 
-     If (Cells(j, 8).Value Mod 6 = 0) Then
+     If (Cells(j, 8).Value Mod 7 = 0) Then
         Cells(j, 7).Value = "#uh " & Cells(j, 7).Value
      End If
      
-          If (Cells(j, 8).Value Mod 7 = 0) Then
+          If (Cells(j, 8).Value Mod 13 = 0) Then
         Cells(j, 7).Value = "#um " & Cells(j, 7).Value
      End If
      
-               If (Cells(j, 8).Value Mod 8 = 0) Then
+               If (Cells(j, 8).Value Mod 17 = 0) Then
         Cells(j, 7).Value = "#ah " & Cells(j, 7).Value
      End If
      
-                    If (Cells(j, 8).Value Mod 9 = 0) Then
+                    If (Cells(j, 8).Value Mod 23 = 0) Then
         Cells(j, 7).Value = "#er " & Cells(j, 7).Value
      End If
         
