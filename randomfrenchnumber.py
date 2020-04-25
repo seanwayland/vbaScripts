@@ -59,7 +59,7 @@ débute le 9 sept. jusqu’au 30 sept. 2019
 months = [ "janvier" , "février" , "mars" , "avril" , "mai", "juin" , "juillet" , "août" , "septembre" , "octobre" , "novembre"  ,"décembre" ]
 contractedMonths = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "aout", "sept", "oct", "nov", "déc"]
 
-
+'''
 
 for i in range(90):
     beginmonth = (random.choice(range(1,6)))
@@ -72,9 +72,65 @@ for i in range(90):
 
     print("débute le " + beginday+  contractedMonths[beginmonth] + "jusqu’ au" + endday + contractedMonths[endday]+  " 2019" )
 
-
+'''
 '''
 for i in range(51,99):
     print(str(i)+ " piastre")
 '''
+
+#pqr789.GHI789
+
+import string
+string.ascii_letters = 'abcdefghijklmnopqrstuvwxyz'
+import random
+
+from itertools import permutations
+
+string.letters = '67890'
+
+permList = permutations(string.letters)
+
+for i in permList:
+    print (''.join(i))
+
+
+
+
+'''
+for i in range (90):
+
+    string.output = ""
+    letter = random.choice(string.ascii_letters)
+    string.output += letter
+    letter = random.choice(string.ascii_letters)
+    string.output += letter.upper()
+    string.output += letter
+    string.output += "."
+    string.output += str(random.choice(range(1,9)))
+    string.output += "_"
+    string.output += str(random.choice(range(1,9)))
+    letter = random.choice(string.ascii_letters)
+    string.output += letter.upper()
+    string.output += "-"
+    string.output += letter
+    string.output += str(random.choice(range(1,9)))
+    string.output += str(random.choice(range(1,9)))
+    string.output += " "
+    string.output += str(random.choice(range(1,9)))
+    letter = random.choice(string.ascii_letters)
+    string.output += letter.upper()
+    string.output += letter
+    letter = random.choice(string.ascii_letters)
+    string.output += letter.upper()
+
+    print(string.output)
+
+
+'''
+
+
+
+
+
+
 
