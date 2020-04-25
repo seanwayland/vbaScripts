@@ -29,7 +29,7 @@ import random
 '''
 print some random french numbers 
 '''
-
+'''
 for i in range(42):
     m = [random.choice(range(3)), random.choice(range(10)), random.choice(range(100))]
     mm = m[0] * 10 + m[1]
@@ -37,14 +37,44 @@ for i in range(42):
     ##print( get1000(m[0]) + get100(m[1]) + get10(m[2]) + " sous")
 
 '''
+'''
 print numbers less than 100 
 '''
+'''
 
-
-for i in range(35):
+for i in range(70):
     m = [random.choice(range(1)), random.choice(range(1)), random.choice(range(100))]
     mm = m[0] * 10 + m[1]
 
-    print(int(mm) if mm > 0 else '' , "{0:02d}".format(m[2]) + " PIASSE")
-    #print( get1000(m[0]) + get100(m[1]) + get10(m[2]) + " sous")
+    #print(int(mm) if mm > 0 else '' , "{0:02d}".format(m[2]) + " pour cent")
+    print( get1000(m[0]) + get100(m[1]) + get10(m[2]) + " pour cent")
+'''
+'''
+
+
+débute le 9 sept. jusqu’au 30 sept. 2019
+
+'''
+
+months = [ "janvier" , "février" , "mars" , "avril" , "mai", "juin" , "juillet" , "août" , "septembre" , "octobre" , "novembre"  ,"décembre" ]
+contractedMonths = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "aout", "sept", "oct", "nov", "déc"]
+
+
+
+for i in range(90):
+    beginmonth = (random.choice(range(1,6)))
+    endmonth = str(random.choice(range(7,12)))
+    beginday = str(random.choice(range(1,28)))
+    endday = (random.choice(range(1,28)))
+    #year = str(random.choice(range(2020,2022)))
+    #percent = str(random.choice(range(1,99)))
+    #percent2 = str(random.choice(range(1,99)))
+
+    print("débute le " + beginday+  contractedMonths[beginmonth] + "jusqu’ au" + endday + contractedMonths[endday]+  " 2019" )
+
+
+'''
+for i in range(51,99):
+    print(str(i)+ " piastre")
+'''
 
