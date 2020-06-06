@@ -1,4 +1,4 @@
-Sub (transposer)
+Sub transposer()
     Dim cellVal As Double
     With ActiveSheet
     ColOneEnd = Cells(.Rows.Count, "A").End(xlUp).Row
