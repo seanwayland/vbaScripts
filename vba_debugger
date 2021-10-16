@@ -1,0 +1,23 @@
+Sub print_test()
+
+Set sh1 = Worksheets(1)
+Set sh2 = Worksheets(2)
+Dim debug_counter As Integer
+'debug counter dc
+dc = 1
+Dim myVal As Integer
+myVal = 1
+sh1.Cells(1, 1) = 1
+sh2.Cells(dc, 1) = myVal
+
+For i = 2 To 10
+sh1.Cells(i, 1) = i
+
+dc = dc + 1
+sh2.Cells(dc, 1) = myVal
+
+Next i
+
+
+
+End Sub
